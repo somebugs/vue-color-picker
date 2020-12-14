@@ -75,7 +75,18 @@ export default {
         }
     },
 
+    created() {
+        this.init()
+    },
+
     methods: {
+        init() {
+            if(this.color.type) {
+                this.gradient = {...this.color};
+                this.colorMode = this.color.type;
+                this.isGradient = true;
+            }
+        },
         t(text) {
             return this.$t ? this.$t(text) : text
         },

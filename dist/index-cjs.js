@@ -2907,7 +2907,18 @@ var script$f = {
         }
     },
 
+    created: function created() {
+        this.init();
+    },
+
     methods: {
+        init: function init() {
+            if(this.color.type) {
+                this.gradient = Object.assign({}, this.color);
+                this.colorMode = this.color.type;
+                this.isGradient = true;
+            }
+        },
         t: function t(text) {
             return this.$t ? this.$t(text) : text
         },

@@ -79,17 +79,18 @@ export default {
         t(text) {
             return this.$t ? this.$t(text) : text
         },
-        async onColorTypeChange(type) {
+        onColorTypeChange(type) {
             this.isGradient = false
-            await this.$nextTick();
-            if(type === 'solid') {
-                return this.isGradient = false
-            }
-            this.isGradient = true
-            this.gradient = {
-                ...this.gradient,
-                type,
-            }
+            this.$nextTick().then(()=> {
+                if(type === 'solid') {
+                    return this.isGradient = false
+                }
+                this.isGradient = true
+                this.gradient = {
+                    ...this.gradient,
+                    type,
+                }
+            })
         }
     }
 };

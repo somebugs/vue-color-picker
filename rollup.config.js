@@ -16,7 +16,7 @@ const config = {
     external: Object.keys(Object.assign(pkg.peerDependencies, pkg.dependencies)),
     output: [{
         format: 'cjs',
-        name: 'vue-color-gradient-picker', // umd and iife for var name = (function(){})()
+        name: 'vue-color-picker', // umd and iife for var name = (function(){})()
         entryFileNames: 'index-[format].js',
         dir: 'dist',
         sourcemap: true,
@@ -25,7 +25,7 @@ const config = {
         dir: 'dist',
         entryFileNames: 'index-[format].js',
         sourcemap: true,
-        name: 'vue-color-gradient-picker',
+        name: 'vue-color-picker',
     }],
     plugins: [
         vue(),
